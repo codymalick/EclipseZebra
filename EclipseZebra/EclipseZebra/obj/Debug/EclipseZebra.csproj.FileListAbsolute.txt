@@ -1,0 +1,9 @@
+C:\git\EclipseZebra\EclipseZebra\EclipseZebra\bin\Debug\EclipseZebra.exe.config
+C:\git\EclipseZebra\EclipseZebra\EclipseZebra\bin\Debug\EclipseZebra.exe
+C:\git\EclipseZebra\EclipseZebra\EclipseZebra\bin\Debug\EclipseZebra.pdb
+C:\git\EclipseZebra\EclipseZebra\EclipseZebra\obj\Debug\EclipseZebra.csprojResolveAssemblyReference.cache
+C:\git\EclipseZebra\EclipseZebra\EclipseZebra\obj\Debug\EclipseZebra.Form1.resources
+C:\git\EclipseZebra\EclipseZebra\EclipseZebra\obj\Debug\EclipseZebra.Properties.Resources.resources
+C:\git\EclipseZebra\EclipseZebra\EclipseZebra\obj\Debug\EclipseZebra.csproj.GenerateResource.Cache
+C:\git\EclipseZebra\EclipseZebra\EclipseZebra\obj\Debug\EclipseZebra.exe
+C:\git\EclipseZebra\EclipseZebra\EclipseZebra\obj\Debug\EclipseZebra.pdb
