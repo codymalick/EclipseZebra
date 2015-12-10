@@ -36,6 +36,7 @@
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.PatientSearchLabel = new System.Windows.Forms.Label();
             this.testbox = new System.Windows.Forms.RichTextBox();
+            this.PrintBtn = new System.Windows.Forms.Button();
             this.SearchPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,11 +111,22 @@
             this.testbox.TabIndex = 4;
             this.testbox.Text = "";
             // 
+            // PrintBtn
+            // 
+            this.PrintBtn.Location = new System.Drawing.Point(56, 836);
+            this.PrintBtn.Name = "PrintBtn";
+            this.PrintBtn.Size = new System.Drawing.Size(248, 65);
+            this.PrintBtn.TabIndex = 5;
+            this.PrintBtn.Text = "Print";
+            this.PrintBtn.UseVisualStyleBackColor = true;
+            this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1460, 1068);
+            this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.testbox);
             this.Controls.Add(this.PatientSearchLabel);
             this.Controls.Add(this.SearchPanel);
@@ -137,6 +149,7 @@
         private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.Button SearchBtn;
         private System.Windows.Forms.RichTextBox testbox;
+        private System.Windows.Forms.Button PrintBtn;
     }
 }
 

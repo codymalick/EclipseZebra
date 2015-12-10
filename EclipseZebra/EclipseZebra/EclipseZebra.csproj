@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Com.SharpZebra">
+      <HintPath>.\Com.SharpZebra.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +56,7 @@
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\PrinterHelper.cs" />
     <Compile Include="Models\Search.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
