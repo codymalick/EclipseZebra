@@ -37,7 +37,11 @@
             this.PatientSearchLabel = new System.Windows.Forms.Label();
             this.testbox = new System.Windows.Forms.RichTextBox();
             this.PrintBtn = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setPrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchPanel.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // FirstNameLabel
@@ -105,7 +109,7 @@
             // 
             // testbox
             // 
-            this.testbox.Location = new System.Drawing.Point(56, 423);
+            this.testbox.Location = new System.Drawing.Point(56, 298);
             this.testbox.Name = "testbox";
             this.testbox.Size = new System.Drawing.Size(1065, 340);
             this.testbox.TabIndex = 4;
@@ -121,6 +125,32 @@
             this.PrintBtn.UseVisualStyleBackColor = true;
             this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1460, 42);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setPrinterToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(113, 38);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // setPrinterToolStripMenuItem
+            // 
+            this.setPrinterToolStripMenuItem.Name = "setPrinterToolStripMenuItem";
+            this.setPrinterToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
+            this.setPrinterToolStripMenuItem.Text = "Set Printer";
+            this.setPrinterToolStripMenuItem.Click += new System.EventHandler(this.setPrinterToolStripMenuItem_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -130,10 +160,15 @@
             this.Controls.Add(this.testbox);
             this.Controls.Add(this.PatientSearchLabel);
             this.Controls.Add(this.SearchPanel);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MainScreen";
-            this.Text = "Form1";
+            this.Text = "EclipseZebra";
             this.SearchPanel.ResumeLayout(false);
             this.SearchPanel.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +185,9 @@
         private System.Windows.Forms.Button SearchBtn;
         private System.Windows.Forms.RichTextBox testbox;
         private System.Windows.Forms.Button PrintBtn;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setPrinterToolStripMenuItem;
     }
 }
 
