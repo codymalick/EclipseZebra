@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,10 +40,17 @@ namespace EclipseZebra
                 MessageBox.Show("Please enter customer name");
             } else
             {
+                string printer_name = File.ReadAllText("settings.txt");
                 string name = this.FirstNameTB.Text + " " + this.LastNameTB.Text;
-                RawPrinterHelper.print(name);
+                RawPrinterHelper.print(name, printer_name);
             }
             
         }
-     }
+
+        private void setPrinterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show();
+        }
+    }
 }
