@@ -16,7 +16,11 @@ namespace EclipseZebra
         public Settings()
         {
             InitializeComponent();
-            PrinterTB.Text = File.ReadAllText("settings.txt");
+            if(File.Exists("settings.txt"))
+            {
+                PrinterTB.Text = File.ReadAllText("settings.txt");
+            }
+            
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
