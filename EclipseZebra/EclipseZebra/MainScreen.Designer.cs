@@ -35,12 +35,14 @@
             this.LastNameTB = new System.Windows.Forms.TextBox();
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.PatientSearchLabel = new System.Windows.Forms.Label();
-            this.testbox = new System.Windows.Forms.RichTextBox();
+            this.AppointmentTB = new System.Windows.Forms.RichTextBox();
             this.PrintBtn = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setPrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.SearchPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +60,7 @@
             // FirstNameTB
             // 
             this.FirstNameTB.Location = new System.Drawing.Point(32, 58);
-            this.FirstNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FirstNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.FirstNameTB.Name = "FirstNameTB";
             this.FirstNameTB.Size = new System.Drawing.Size(200, 31);
             this.FirstNameTB.TabIndex = 1;
@@ -71,7 +73,7 @@
             this.SearchPanel.Controls.Add(this.FirstNameTB);
             this.SearchPanel.Controls.Add(this.FirstNameLabel);
             this.SearchPanel.Location = new System.Drawing.Point(56, 92);
-            this.SearchPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchPanel.Margin = new System.Windows.Forms.Padding(4);
             this.SearchPanel.Name = "SearchPanel";
             this.SearchPanel.Size = new System.Drawing.Size(968, 144);
             this.SearchPanel.TabIndex = 2;
@@ -79,7 +81,7 @@
             // SearchBtn
             // 
             this.SearchBtn.Location = new System.Drawing.Point(628, 56);
-            this.SearchBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(240, 48);
             this.SearchBtn.TabIndex = 4;
@@ -90,7 +92,7 @@
             // LastNameTB
             // 
             this.LastNameTB.Location = new System.Drawing.Point(310, 58);
-            this.LastNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LastNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.LastNameTB.Name = "LastNameTB";
             this.LastNameTB.Size = new System.Drawing.Size(200, 31);
             this.LastNameTB.TabIndex = 3;
@@ -115,19 +117,19 @@
             this.PatientSearchLabel.TabIndex = 3;
             this.PatientSearchLabel.Text = "Patient Search";
             // 
-            // testbox
+            // AppointmentTB
             // 
-            this.testbox.Location = new System.Drawing.Point(56, 298);
-            this.testbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.testbox.Name = "testbox";
-            this.testbox.Size = new System.Drawing.Size(1064, 341);
-            this.testbox.TabIndex = 4;
-            this.testbox.Text = "";
+            this.AppointmentTB.Location = new System.Drawing.Point(56, 298);
+            this.AppointmentTB.Margin = new System.Windows.Forms.Padding(4);
+            this.AppointmentTB.Name = "AppointmentTB";
+            this.AppointmentTB.Size = new System.Drawing.Size(1064, 341);
+            this.AppointmentTB.TabIndex = 4;
+            this.AppointmentTB.Text = "";
             // 
             // PrintBtn
             // 
             this.PrintBtn.Location = new System.Drawing.Point(56, 837);
-            this.PrintBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PrintBtn.Margin = new System.Windows.Forms.Padding(4);
             this.PrintBtn.Name = "PrintBtn";
             this.PrintBtn.Size = new System.Drawing.Size(248, 65);
             this.PrintBtn.TabIndex = 5;
@@ -142,7 +144,7 @@
             this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 40);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -150,37 +152,55 @@
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setPrinterToolStripMenuItem,
-            this.printTestToolStripMenuItem});
+            this.printTestToolStripMenuItem,
+            this.loadTestToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(113, 38);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(113, 36);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // setPrinterToolStripMenuItem
             // 
             this.setPrinterToolStripMenuItem.Name = "setPrinterToolStripMenuItem";
-            this.setPrinterToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
+            this.setPrinterToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
             this.setPrinterToolStripMenuItem.Text = "Set Printer";
             this.setPrinterToolStripMenuItem.Click += new System.EventHandler(this.setPrinterToolStripMenuItem_Click);
             // 
             // printTestToolStripMenuItem
             // 
             this.printTestToolStripMenuItem.Name = "printTestToolStripMenuItem";
-            this.printTestToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
+            this.printTestToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
             this.printTestToolStripMenuItem.Text = "Print Test";
             this.printTestToolStripMenuItem.Click += new System.EventHandler(this.printTestToolStripMenuItem_Click);
+            // 
+            // loadTestToolStripMenuItem
+            // 
+            this.loadTestToolStripMenuItem.Name = "loadTestToolStripMenuItem";
+            this.loadTestToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
+            this.loadTestToolStripMenuItem.Text = "Load Test";
+            this.loadTestToolStripMenuItem.Click += new System.EventHandler(this.loadTestToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(69, 266);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 25);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Future Appointments";
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 1056);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.PrintBtn);
-            this.Controls.Add(this.testbox);
+            this.Controls.Add(this.AppointmentTB);
             this.Controls.Add(this.PatientSearchLabel);
             this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "MainScreen";
             this.Text = "EclipseZebra";
@@ -202,12 +222,14 @@
         private System.Windows.Forms.TextBox LastNameTB;
         private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.Button SearchBtn;
-        private System.Windows.Forms.RichTextBox testbox;
+        private System.Windows.Forms.RichTextBox AppointmentTB;
         private System.Windows.Forms.Button PrintBtn;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setPrinterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printTestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadTestToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 
