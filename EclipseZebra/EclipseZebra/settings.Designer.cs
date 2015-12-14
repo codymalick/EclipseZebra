@@ -36,7 +36,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(466, 25);
             this.label1.TabIndex = 0;
@@ -44,31 +45,36 @@
             // 
             // PrinterTB
             // 
-            this.PrinterTB.Location = new System.Drawing.Point(18, 45);
+            this.PrinterTB.Location = new System.Drawing.Point(18, 44);
+            this.PrinterTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PrinterTB.Name = "PrinterTB";
             this.PrinterTB.Size = new System.Drawing.Size(300, 31);
             this.PrinterTB.TabIndex = 1;
+            this.PrinterTB.TextChanged += new System.EventHandler(this.PrinterTB_TextChanged);
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(13, 106);
+            this.SaveBtn.Location = new System.Drawing.Point(12, 106);
+            this.SaveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(166, 45);
+            this.SaveBtn.Size = new System.Drawing.Size(166, 44);
             this.SaveBtn.TabIndex = 2;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // settings
+            // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 388);
+            this.ClientSize = new System.Drawing.Size(580, 388);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.PrinterTB);
             this.Controls.Add(this.label1);
-            this.Name = "settings";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "Settings";
             this.Text = "settings";
+            this.Load += new System.EventHandler(this.Settings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
