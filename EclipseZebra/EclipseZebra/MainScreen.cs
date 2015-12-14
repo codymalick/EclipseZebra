@@ -32,7 +32,7 @@ namespace EclipseZebra
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            this.testbox.Text = string.Empty;
+            this.AppointmentTB.Text = string.Empty;
 
             if (this.FirstNameTB.Text == string.Empty || this.LastNameTB.Text == string.Empty)
             {
@@ -47,7 +47,7 @@ namespace EclipseZebra
                     {
                         temp = Convert.ToDateTime(result[i]);
                         current_patient.appointments.Add(temp);
-                        this.testbox.Text += temp.ToShortDateString() + " @ " + temp.TimeOfDay.ToString() + '\n';
+                        this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
                     }
                 }
                 
@@ -87,7 +87,7 @@ namespace EclipseZebra
         private void reset()
         {
             current_patient.reset();
-            this.testbox.Text = string.Empty;
+            this.AppointmentTB.Text = string.Empty;
         }
 
         private void printTestToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,6 +114,25 @@ namespace EclipseZebra
             if(File.Exists("settings.txt"))
             {
                 printer_name = File.ReadAllText("settings.txt");
+            }
+        }
+
+        private void loadTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            current_patient = new Patient()
+            {
+                firstName = "Cody",
+                lastName = "Malick",
+                appointments = { DateTime.Now, DateTime.Now.AddDays(1), DateTime.Now.AddDays(2) }
+            };
+            FirstNameTB.Text = current_patient.firstName;
+            LastNameTB.Text = current_patient.lastName;
+            DateTime temp;
+            for(int i = 0; i <= 2; i++)
+            {
+                temp = Convert.ToDateTime(current_patient.appointments[i]);
+                current_patient.appointments.Add(temp);
+                this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
             }
         }
     }
