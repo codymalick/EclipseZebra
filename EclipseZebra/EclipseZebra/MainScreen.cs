@@ -63,6 +63,7 @@ namespace EclipseZebra
             }
             else
             {
+                set_printer();
                 if(this.printer_name == string.Empty)
                 {
                     MessageBox.Show("Please enter a printer in settings");
@@ -97,6 +98,7 @@ namespace EclipseZebra
                 lastName = "Malick",
                 appointments = { DateTime.Now, DateTime.Now.AddDays(1), DateTime.Now.AddDays(2) }
             };
+            set_printer();
             if (printer_name == null)
             {
                 MessageBox.Show("Please configure printer");
