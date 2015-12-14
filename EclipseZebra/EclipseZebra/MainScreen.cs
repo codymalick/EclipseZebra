@@ -27,6 +27,7 @@ namespace EclipseZebra
             //Eclipse uses ODBC database pattern
             
             InitializeComponent();
+            set_printer();
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
@@ -86,6 +87,32 @@ namespace EclipseZebra
         {
             current_patient.reset();
             this.testbox.Text = string.Empty;
+        }
+
+        private void printTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Patient test_patient = new Patient()
+            {
+                firstName = "Cody",
+                lastName = "Malick",
+                appointments = { DateTime.Now, DateTime.Now.AddDays(1), DateTime.Now.AddDays(2) }
+            };
+            if (printer_name == null)
+            {
+                MessageBox.Show("Please configure printer");
+            }
+            else
+            {
+                RawPrinterHelper.print(test_patient, printer_name);
+            }
+        }
+
+        private void set_printer()
+        {
+            if(File.Exists("settings.txt"))
+            {
+                printer_name = File.ReadAllText("settings.txt");
+            }
         }
     }
 }

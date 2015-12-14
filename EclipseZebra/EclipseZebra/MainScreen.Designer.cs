@@ -40,6 +40,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setPrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -47,19 +48,19 @@
             // FirstNameLabel
             // 
             this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(14, 15);
-            this.FirstNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FirstNameLabel.Location = new System.Drawing.Point(28, 29);
+            this.FirstNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(57, 13);
+            this.FirstNameLabel.Size = new System.Drawing.Size(116, 25);
             this.FirstNameLabel.TabIndex = 0;
             this.FirstNameLabel.Text = "First Name";
             // 
             // FirstNameTB
             // 
-            this.FirstNameTB.Location = new System.Drawing.Point(16, 30);
-            this.FirstNameTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FirstNameTB.Location = new System.Drawing.Point(32, 58);
+            this.FirstNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FirstNameTB.Name = "FirstNameTB";
-            this.FirstNameTB.Size = new System.Drawing.Size(102, 20);
+            this.FirstNameTB.Size = new System.Drawing.Size(200, 31);
             this.FirstNameTB.TabIndex = 1;
             // 
             // SearchPanel
@@ -69,18 +70,18 @@
             this.SearchPanel.Controls.Add(this.LastNameLabel);
             this.SearchPanel.Controls.Add(this.FirstNameTB);
             this.SearchPanel.Controls.Add(this.FirstNameLabel);
-            this.SearchPanel.Location = new System.Drawing.Point(28, 48);
-            this.SearchPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SearchPanel.Location = new System.Drawing.Point(56, 92);
+            this.SearchPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(484, 75);
+            this.SearchPanel.Size = new System.Drawing.Size(968, 144);
             this.SearchPanel.TabIndex = 2;
             // 
             // SearchBtn
             // 
-            this.SearchBtn.Location = new System.Drawing.Point(314, 29);
-            this.SearchBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SearchBtn.Location = new System.Drawing.Point(628, 56);
+            this.SearchBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(120, 25);
+            this.SearchBtn.Size = new System.Drawing.Size(240, 48);
             this.SearchBtn.TabIndex = 4;
             this.SearchBtn.Text = "Search";
             this.SearchBtn.UseVisualStyleBackColor = true;
@@ -88,47 +89,47 @@
             // 
             // LastNameTB
             // 
-            this.LastNameTB.Location = new System.Drawing.Point(155, 30);
-            this.LastNameTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LastNameTB.Location = new System.Drawing.Point(310, 58);
+            this.LastNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LastNameTB.Name = "LastNameTB";
-            this.LastNameTB.Size = new System.Drawing.Size(102, 20);
+            this.LastNameTB.Size = new System.Drawing.Size(200, 31);
             this.LastNameTB.TabIndex = 3;
             // 
             // LastNameLabel
             // 
             this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(152, 15);
-            this.LastNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LastNameLabel.Location = new System.Drawing.Point(304, 29);
+            this.LastNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(58, 13);
+            this.LastNameLabel.Size = new System.Drawing.Size(115, 25);
             this.LastNameLabel.TabIndex = 2;
             this.LastNameLabel.Text = "Last Name";
             // 
             // PatientSearchLabel
             // 
             this.PatientSearchLabel.AutoSize = true;
-            this.PatientSearchLabel.Location = new System.Drawing.Point(32, 27);
-            this.PatientSearchLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PatientSearchLabel.Location = new System.Drawing.Point(64, 52);
+            this.PatientSearchLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PatientSearchLabel.Name = "PatientSearchLabel";
-            this.PatientSearchLabel.Size = new System.Drawing.Size(77, 13);
+            this.PatientSearchLabel.Size = new System.Drawing.Size(153, 25);
             this.PatientSearchLabel.TabIndex = 3;
             this.PatientSearchLabel.Text = "Patient Search";
             // 
             // testbox
             // 
-            this.testbox.Location = new System.Drawing.Point(28, 155);
-            this.testbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.testbox.Location = new System.Drawing.Point(56, 298);
+            this.testbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.testbox.Name = "testbox";
-            this.testbox.Size = new System.Drawing.Size(534, 179);
+            this.testbox.Size = new System.Drawing.Size(1064, 341);
             this.testbox.TabIndex = 4;
             this.testbox.Text = "";
             // 
             // PrintBtn
             // 
-            this.PrintBtn.Location = new System.Drawing.Point(28, 435);
-            this.PrintBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PrintBtn.Location = new System.Drawing.Point(56, 837);
+            this.PrintBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PrintBtn.Name = "PrintBtn";
-            this.PrintBtn.Size = new System.Drawing.Size(124, 34);
+            this.PrintBtn.Size = new System.Drawing.Size(248, 65);
             this.PrintBtn.TabIndex = 5;
             this.PrintBtn.Text = "Print";
             this.PrintBtn.UseVisualStyleBackColor = true;
@@ -141,38 +142,45 @@
             this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(642, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 42);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setPrinterToolStripMenuItem});
+            this.setPrinterToolStripMenuItem,
+            this.printTestToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(113, 36);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(113, 38);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // setPrinterToolStripMenuItem
             // 
             this.setPrinterToolStripMenuItem.Name = "setPrinterToolStripMenuItem";
-            this.setPrinterToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
+            this.setPrinterToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
             this.setPrinterToolStripMenuItem.Text = "Set Printer";
             this.setPrinterToolStripMenuItem.Click += new System.EventHandler(this.setPrinterToolStripMenuItem_Click);
             // 
+            // printTestToolStripMenuItem
+            // 
+            this.printTestToolStripMenuItem.Name = "printTestToolStripMenuItem";
+            this.printTestToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
+            this.printTestToolStripMenuItem.Text = "Print Test";
+            this.printTestToolStripMenuItem.Click += new System.EventHandler(this.printTestToolStripMenuItem_Click);
+            // 
             // MainScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 549);
+            this.ClientSize = new System.Drawing.Size(1284, 1056);
             this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.testbox);
             this.Controls.Add(this.PatientSearchLabel);
             this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "MainScreen";
             this.Text = "EclipseZebra";
@@ -199,6 +207,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setPrinterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printTestToolStripMenuItem;
     }
 }
 

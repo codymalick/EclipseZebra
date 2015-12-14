@@ -39,11 +39,16 @@ namespace EclipseZebra
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Settings_Load(object sender, EventArgs e)
         {
-            PrintDialog print = new PrintDialog();
-            print.ShowDialog();
-            
+
         }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    PrintDialog print = new PrintDialog();
+        //    print.ShowDialog();
+
+        //}
     }
 }
