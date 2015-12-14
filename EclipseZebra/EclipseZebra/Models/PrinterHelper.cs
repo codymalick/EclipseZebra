@@ -8,10 +8,11 @@ using Com.SharpZebra;
 using System.Collections.Generic;
 using Com.SharpZebra.Commands;
 using Com.SharpZebra.Printing;
+using EclipseZebra.Model;
 
 public class RawPrinterHelper
 {
-    public static void print(string patient_name, string printer_name)
+    public static void print(Patient patient, string printer_name)
     {
         Com.SharpZebra.Printing.PrinterSettings ps = new Com.SharpZebra.Printing.PrinterSettings();
         ps.PrinterName = printer_name;
@@ -21,7 +22,7 @@ public class RawPrinterHelper
 
         List<byte> page = new List<byte>();
         page.AddRange(EPLCommands.ClearPrinter(ps));
-        page.AddRange(EPLCommands.TextWrite(ps.Width / 3, 10, ElementDrawRotation.NO_ROTATION, ZebraFont.STANDARD_SMALL, 2, 2, false, patient_name, ps));
+        page.AddRange(EPLCommands.TextWrite(ps.Width / 3, 10, ElementDrawRotation.NO_ROTATION, ZebraFont.STANDARD_SMALL, 2, 2, false, (patient.firstName + " " + patient.lastName), ps));
         page.AddRange(EPLCommands.TextWrite(ps.Width / 3, 50, ElementDrawRotation.NO_ROTATION, ZebraFont.STANDARD_SMALL, 2, 2, false, "test area", ps));
         //page.AddRange(EPLCommands.TextWrite(10, 10, ElementDrawRotation.NO_ROTATION, ZebraFont.STANDARD_NORMAL, 30, 30, false, "Hello World!", ps));
 

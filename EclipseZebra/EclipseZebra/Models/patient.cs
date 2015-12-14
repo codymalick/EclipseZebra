@@ -10,13 +10,23 @@ namespace EclipseZebra.Model
     {
         public string firstName;
         public string lastName;
-        public IEnumerable<DateTime> appointments;
+        public List<DateTime> appointments;
         
-        Patient() { }
+        public Patient() {
+            firstName = string.Empty;
+            lastName = string.Empty;
+            appointments = new List<DateTime>();
+        }
 
         public IEnumerable<DateTime> nextThree() {
             return this.appointments.Take(3);
         }
 
+        public void reset()
+        {
+            this.firstName = string.Empty;
+            this.lastName = string.Empty;
+            this.appointments = new List<DateTime>();
+        }
     }
 }

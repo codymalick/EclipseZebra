@@ -11,12 +11,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
+using EclipseZebra.Model;
 
 namespace EclipseZebra
 {
     public partial class MainScreen : Form
     {
-        
+        Patient current_patient = new Patient();
+        string printer_name;
+
         public MainScreen()
         {
             //connect to database
@@ -28,8 +31,27 @@ namespace EclipseZebra
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
+            this.testbox.Text = string.Empty;
+
+            if (this.FirstNameTB.Text == string.Empty || this.LastNameTB.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter customer name");
+            }
+            else {
+                var result = Search.execute(this.FirstNameTB.Text, this.LastNameTB.Text);
+                if(result != null)
+                {
+                    DateTime temp;
+                    for(int i = 0; i < 3; i++)
+                    {
+                        temp = Convert.ToDateTime(result[i]);
+                        current_patient.appointments.Add(temp);
+                        this.testbox.Text += temp.ToShortDateString() + " @ " + temp.TimeOfDay.ToString() + '\n';
+                    }
+                }
+                
+            }
             
-            this.testbox.Text = Search.execute(this.FirstNameTB.Text, this.LastNameTB.Text);
         }
 
         private void PrintBtn_Click(object sender, EventArgs e)
@@ -37,11 +59,19 @@ namespace EclipseZebra
             if(this.FirstNameTB.Text == string.Empty || this.LastNameTB.Text == string.Empty)
             {
                 MessageBox.Show("Please enter customer name");
-            } else
+            }
+            else
             {
-                string printer_name = File.ReadAllText("settings.txt");
-                string name = this.FirstNameTB.Text + " " + this.LastNameTB.Text;
-                RawPrinterHelper.print(name, printer_name);
+                if(this.printer_name == string.Empty)
+                {
+                    MessageBox.Show("Please enter a printer in settings");
+                } else
+                {
+                    string printer_name = File.ReadAllText("settings.txt");
+                    string name = this.FirstNameTB.Text + " " + this.LastNameTB.Text;
+                    RawPrinterHelper.print(current_patient, printer_name);
+                }
+                
             }
             
         }
@@ -50,6 +80,12 @@ namespace EclipseZebra
         {
             Settings settings = new Settings();
             settings.Show();
+        }
+
+        private void reset()
+        {
+            current_patient.reset();
+            this.testbox.Text = string.Empty;
         }
     }
 }
