@@ -43,10 +43,9 @@ namespace EclipseZebra
                 if(result != null)
                 {
                     DateTime temp;
-                    for(int i = 0; i < 3; i++)
+                    for(int i = 0; i <= result.Count - 1 ; i++)
                     {
                         temp = Convert.ToDateTime(result[i]);
-                        current_patient.appointments.Add(temp);
                         this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
                     }
                 }
@@ -96,7 +95,7 @@ namespace EclipseZebra
             {
                 firstName = "Cody",
                 lastName = "Malick",
-                appointments = { DateTime.Now, DateTime.Now.AddDays(1), DateTime.Now.AddDays(2) }
+                appointments = { DateTime.Now, DateTime.Today }
             };
             set_printer();
             if (printer_name == null)
@@ -119,19 +118,19 @@ namespace EclipseZebra
 
         private void loadTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.AppointmentTB.Text = string.Empty;
             current_patient = new Patient()
             {
                 firstName = "Cody",
                 lastName = "Malick",
-                appointments = { DateTime.Now, DateTime.Now.AddDays(1), DateTime.Now.AddDays(2) }
+                appointments = { DateTime.Now, DateTime.Now.AddDays(1) }
             };
             FirstNameTB.Text = current_patient.firstName;
             LastNameTB.Text = current_patient.lastName;
             DateTime temp;
-            for(int i = 0; i <= 2; i++)
+            for(int i = 0; i <= current_patient.appointments.Count-1; i++)
             {
                 temp = Convert.ToDateTime(current_patient.appointments[i]);
-                current_patient.appointments.Add(temp);
                 this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
             }
         }
