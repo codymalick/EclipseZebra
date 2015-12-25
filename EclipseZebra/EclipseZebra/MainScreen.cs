@@ -95,7 +95,7 @@ namespace EclipseZebra
             {
                 firstName = "Cody",
                 lastName = "Malick",
-                appointments = { DateTime.Now, DateTime.Today }
+                appointments = { DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now}
             };
             set_printer();
             if (printer_name == null)
@@ -128,7 +128,7 @@ namespace EclipseZebra
             FirstNameTB.Text = current_patient.firstName;
             LastNameTB.Text = current_patient.lastName;
             DateTime temp;
-            for(int i = 0; i <= current_patient.appointments.Count-1; i++)
+            for (int i = 0; i <= current_patient.appointments.Count - 1; i++)
             {
                 temp = Convert.ToDateTime(current_patient.appointments[i]);
                 this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
