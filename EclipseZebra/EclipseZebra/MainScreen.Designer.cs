@@ -41,9 +41,10 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setPrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.databaseSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.PrintThreeBtn = new System.Windows.Forms.Button();
             this.SearchPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -175,19 +176,19 @@
             this.databaseSettingsToolStripMenuItem.Text = "Database Settings";
             this.databaseSettingsToolStripMenuItem.Click += new System.EventHandler(this.databaseSettingsToolStripMenuItem_Click);
             // 
-            // printTestToolStripMenuItem
-            // 
-            this.printTestToolStripMenuItem.Name = "printTestToolStripMenuItem";
-            this.printTestToolStripMenuItem.Size = new System.Drawing.Size(306, 38);
-            this.printTestToolStripMenuItem.Text = "Print Test";
-            this.printTestToolStripMenuItem.Click += new System.EventHandler(this.printTestToolStripMenuItem_Click);
-            // 
             // loadTestToolStripMenuItem
             // 
             this.loadTestToolStripMenuItem.Name = "loadTestToolStripMenuItem";
             this.loadTestToolStripMenuItem.Size = new System.Drawing.Size(306, 38);
             this.loadTestToolStripMenuItem.Text = "Load Test";
             this.loadTestToolStripMenuItem.Click += new System.EventHandler(this.loadTestToolStripMenuItem_Click);
+            // 
+            // printTestToolStripMenuItem
+            // 
+            this.printTestToolStripMenuItem.Name = "printTestToolStripMenuItem";
+            this.printTestToolStripMenuItem.Size = new System.Drawing.Size(306, 38);
+            this.printTestToolStripMenuItem.Text = "Print Test";
+            this.printTestToolStripMenuItem.Click += new System.EventHandler(this.printTestToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -198,11 +199,23 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Future Appointments";
             // 
+            // PrintThreeBtn
+            // 
+            this.PrintThreeBtn.Location = new System.Drawing.Point(333, 647);
+            this.PrintThreeBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.PrintThreeBtn.Name = "PrintThreeBtn";
+            this.PrintThreeBtn.Size = new System.Drawing.Size(248, 65);
+            this.PrintThreeBtn.TabIndex = 8;
+            this.PrintThreeBtn.Text = "Print Next Three Appointments";
+            this.PrintThreeBtn.UseVisualStyleBackColor = true;
+            this.PrintThreeBtn.Click += new System.EventHandler(this.PrintThreeBtn_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 763);
+            this.Controls.Add(this.PrintThreeBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.AppointmentTB);
@@ -241,6 +254,7 @@
         private System.Windows.Forms.ToolStripMenuItem loadTestToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem databaseSettingsToolStripMenuItem;
+        private System.Windows.Forms.Button PrintThreeBtn;
     }
 }
 

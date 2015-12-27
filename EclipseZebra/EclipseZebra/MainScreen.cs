@@ -56,25 +56,15 @@ namespace EclipseZebra
 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
-            if(this.FirstNameTB.Text == string.Empty || this.LastNameTB.Text == string.Empty)
+            set_printer();
+
+            //check for errors
+            int err = error_checking();
+            if (err == 0)
             {
-                MessageBox.Show("Please enter customer name");
+                string printer_name = File.ReadAllText("printerSettings.txt");
+                RawPrinterHelper.print(current_patient, printer_name);
             }
-            else
-            {
-                set_printer();
-                if(this.printer_name == string.Empty)
-                {
-                    MessageBox.Show("Please enter a printer in settings");
-                } else
-                {
-                    string printer_name = File.ReadAllText("printerSettings.txt");
-                    string name = this.FirstNameTB.Text + " " + this.LastNameTB.Text;
-                    RawPrinterHelper.print(current_patient, printer_name);
-                }
-                
-            }
-            
         }
 
         private void setPrinterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -128,7 +118,7 @@ namespace EclipseZebra
             {
                 firstName = "Cody",
                 lastName = "Malick",
-                appointments = { DateTime.Now, DateTime.Now.AddDays(1) }
+                appointments = { DateTime.Now, DateTime.Now.AddDays(1), DateTime.Now, DateTime.Now }
             };
             FirstNameTB.Text = current_patient.firstName;
             LastNameTB.Text = current_patient.lastName;
@@ -144,6 +134,45 @@ namespace EclipseZebra
         {
             DatabaseSettings db = new DatabaseSettings();
             db.Show();
+        }
+
+        private void PrintThreeBtn_Click(object sender, EventArgs e)
+        {
+            set_printer();
+
+            //check for errors
+            int err = error_checking();
+            if (err == 0)
+            {
+                Patient temp_patient = new Patient() { firstName = current_patient.firstName, lastName = current_patient.lastName };
+                for(int i = 0; i < 3; i++)
+                {
+                    if (i+1 <= current_patient.appointments.Count && current_patient.appointments[i] != null)
+                        temp_patient.appointments.Add(current_patient.appointments[i]);
+                }
+                RawPrinterHelper.print(temp_patient, printer_name);
+            }
+        }
+
+        private int error_checking()
+        {
+            if(current_patient.firstName.Equals(string.Empty) || current_patient.lastName.Equals(string.Empty))
+            {
+                MessageBox.Show("Please search for a Patient");
+                return 1;
+            }
+            if(current_patient.appointments.Count == 0)
+            {
+                MessageBox.Show("Patient has no appointments");
+                return 1;
+            }
+            if(this.printer_name.Equals(string.Empty))
+            {
+                MessageBox.Show("Please Configure Printer");
+                return 1;
+            }
+            return 0;
+            
         }
     }
 }
