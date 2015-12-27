@@ -15,6 +15,8 @@ using EclipseZebra.Model;
 
 namespace EclipseZebra
 {
+    //Icon Credit: Icons made by http://www.freepik.com from http://www.flaticon.com www.flaticon.com is licensed by http://creativecommons.org/licenses/by/3.0/ CC BY 3.0
+    //Icons made by http://www.flaticon.com/authors/egor-rumyantsev Egor Rumyantsev from http://www.flaticon.com www.flaticon.com is licensed by http://creativecommons.org/licenses/by/3.0/ CC BY 3.0
     public partial class MainScreen : Form
     {
         Patient current_patient = new Patient();
