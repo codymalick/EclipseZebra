@@ -40,10 +40,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setPrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.databaseSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -76,15 +76,15 @@
             this.SearchPanel.Location = new System.Drawing.Point(56, 92);
             this.SearchPanel.Margin = new System.Windows.Forms.Padding(4);
             this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(968, 144);
+            this.SearchPanel.Size = new System.Drawing.Size(823, 144);
             this.SearchPanel.TabIndex = 2;
             // 
             // SearchBtn
             // 
-            this.SearchBtn.Location = new System.Drawing.Point(628, 56);
+            this.SearchBtn.Location = new System.Drawing.Point(555, 53);
             this.SearchBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(240, 48);
+            this.SearchBtn.Size = new System.Drawing.Size(233, 40);
             this.SearchBtn.TabIndex = 4;
             this.SearchBtn.Text = "Search";
             this.SearchBtn.UseVisualStyleBackColor = true;
@@ -111,7 +111,7 @@
             // PatientSearchLabel
             // 
             this.PatientSearchLabel.AutoSize = true;
-            this.PatientSearchLabel.Location = new System.Drawing.Point(64, 52);
+            this.PatientSearchLabel.Location = new System.Drawing.Point(51, 51);
             this.PatientSearchLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PatientSearchLabel.Name = "PatientSearchLabel";
             this.PatientSearchLabel.Size = new System.Drawing.Size(153, 25);
@@ -123,13 +123,14 @@
             this.AppointmentTB.Location = new System.Drawing.Point(56, 298);
             this.AppointmentTB.Margin = new System.Windows.Forms.Padding(4);
             this.AppointmentTB.Name = "AppointmentTB";
-            this.AppointmentTB.Size = new System.Drawing.Size(1064, 341);
+            this.AppointmentTB.ReadOnly = true;
+            this.AppointmentTB.Size = new System.Drawing.Size(823, 326);
             this.AppointmentTB.TabIndex = 4;
             this.AppointmentTB.Text = "";
             // 
             // PrintBtn
             // 
-            this.PrintBtn.Location = new System.Drawing.Point(56, 837);
+            this.PrintBtn.Location = new System.Drawing.Point(56, 647);
             this.PrintBtn.Margin = new System.Windows.Forms.Padding(4);
             this.PrintBtn.Name = "PrintBtn";
             this.PrintBtn.Size = new System.Drawing.Size(248, 65);
@@ -145,7 +146,7 @@
             this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(961, 40);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -154,10 +155,10 @@
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setPrinterToolStripMenuItem,
             this.databaseSettingsToolStripMenuItem,
-            this.printTestToolStripMenuItem,
-            this.loadTestToolStripMenuItem});
+            this.loadTestToolStripMenuItem,
+            this.printTestToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(113, 38);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(113, 36);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // setPrinterToolStripMenuItem
@@ -166,6 +167,13 @@
             this.setPrinterToolStripMenuItem.Size = new System.Drawing.Size(306, 38);
             this.setPrinterToolStripMenuItem.Text = "Printer Settings";
             this.setPrinterToolStripMenuItem.Click += new System.EventHandler(this.setPrinterToolStripMenuItem_Click);
+            // 
+            // databaseSettingsToolStripMenuItem
+            // 
+            this.databaseSettingsToolStripMenuItem.Name = "databaseSettingsToolStripMenuItem";
+            this.databaseSettingsToolStripMenuItem.Size = new System.Drawing.Size(306, 38);
+            this.databaseSettingsToolStripMenuItem.Text = "Database Settings";
+            this.databaseSettingsToolStripMenuItem.Click += new System.EventHandler(this.databaseSettingsToolStripMenuItem_Click);
             // 
             // printTestToolStripMenuItem
             // 
@@ -184,24 +192,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 266);
+            this.label1.Location = new System.Drawing.Point(51, 269);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(211, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "Future Appointments";
             // 
-            // databaseSettingsToolStripMenuItem
-            // 
-            this.databaseSettingsToolStripMenuItem.Name = "databaseSettingsToolStripMenuItem";
-            this.databaseSettingsToolStripMenuItem.Size = new System.Drawing.Size(306, 38);
-            this.databaseSettingsToolStripMenuItem.Text = "Database Settings";
-            this.databaseSettingsToolStripMenuItem.Click += new System.EventHandler(this.databaseSettingsToolStripMenuItem_Click);
-            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 1056);
+            this.ClientSize = new System.Drawing.Size(961, 763);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.AppointmentTB);

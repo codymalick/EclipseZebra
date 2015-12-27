@@ -46,7 +46,7 @@
             // PrinterTB
             // 
             this.PrinterTB.Location = new System.Drawing.Point(18, 44);
-            this.PrinterTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PrinterTB.Margin = new System.Windows.Forms.Padding(4);
             this.PrinterTB.Name = "PrinterTB";
             this.PrinterTB.Size = new System.Drawing.Size(300, 31);
             this.PrinterTB.TabIndex = 1;
@@ -54,26 +54,26 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(12, 106);
-            this.SaveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveBtn.Location = new System.Drawing.Point(18, 92);
+            this.SaveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(166, 44);
+            this.SaveBtn.Size = new System.Drawing.Size(166, 41);
             this.SaveBtn.TabIndex = 2;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // Settings
+            // PrinterSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 388);
+            this.ClientSize = new System.Drawing.Size(638, 163);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.PrinterTB);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Settings";
-            this.Text = "settings";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "PrinterSettings";
+            this.Text = "Printer Settings";
             this.Load += new System.EventHandler(this.Settings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
