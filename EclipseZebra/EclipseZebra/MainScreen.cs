@@ -28,31 +28,33 @@ namespace EclipseZebra
             
             InitializeComponent();
             set_printer();
+            NameTB.AutoCompleteCustomSource = Search.setup_autocomplete();
         }
 
-        private void SearchBtn_Click(object sender, EventArgs e)
-        {
-            this.AppointmentTB.Text = string.Empty;
+        
+        //private void SearchBtn_Click(object sender, EventArgs e)
+        //{
+        //    this.AppointmentTB.Text = string.Empty;
 
-            if (this.FirstNameTB.Text == string.Empty || this.LastNameTB.Text == string.Empty)
-            {
-                MessageBox.Show("Please enter customer name");
-            }
-            else {
-                var result = Search.execute(this.FirstNameTB.Text, this.LastNameTB.Text);
-                if(result != null)
-                {
-                    DateTime temp;
-                    for(int i = 0; i <= result.Count - 1 ; i++)
-                    {
-                        temp = Convert.ToDateTime(result[i]);
-                        this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
-                    }
-                }
+        //    if (this.FirstNameTB.Text == string.Empty || this.LastNameTB.Text == string.Empty)
+        //    {
+        //        MessageBox.Show("Please enter customer name");
+        //    }
+        //    else {
+        //        var result = Search.execute(this.FirstNameTB.Text, this.LastNameTB.Text);
+        //        if(result != null)
+        //        {
+        //            DateTime temp;
+        //            for(int i = 0; i <= result.Count - 1 ; i++)
+        //            {
+        //                temp = Convert.ToDateTime(result[i]);
+        //                this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
+        //            }
+        //        }
                 
-            }
+        //    }
             
-        }
+        //}
 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
@@ -110,25 +112,25 @@ namespace EclipseZebra
                 printer_name = File.ReadLines("printerSettings.txt").Take(1).First();
             }
         }
-
-        private void loadTestToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.AppointmentTB.Text = string.Empty;
-            current_patient = new Patient()
-            {
-                firstName = "Cody",
-                lastName = "Malick",
-                appointments = { DateTime.Now, DateTime.Now.AddDays(1), DateTime.Now, DateTime.Now }
-            };
-            FirstNameTB.Text = current_patient.firstName;
-            LastNameTB.Text = current_patient.lastName;
-            DateTime temp;
-            for (int i = 0; i <= current_patient.appointments.Count - 1; i++)
-            {
-                temp = Convert.ToDateTime(current_patient.appointments[i]);
-                this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
-            }
-        }
+        
+        //private void loadTestToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    this.AppointmentTB.Text = string.Empty;
+        //    current_patient = new Patient()
+        //    {
+        //        firstName = "Cody",
+        //        lastName = "Malick",
+        //        appointments = { DateTime.Now, DateTime.Now.AddDays(1), DateTime.Now, DateTime.Now }
+        //    };
+        //    FirstNameTB.Text = current_patient.firstName;
+        //    LastNameTB.Text = current_patient.lastName;
+        //    DateTime temp;
+        //    for (int i = 0; i <= current_patient.appointments.Count - 1; i++)
+        //    {
+        //        temp = Convert.ToDateTime(current_patient.appointments[i]);
+        //        this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
+        //    }
+        //}
 
         private void databaseSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -174,5 +176,7 @@ namespace EclipseZebra
             return 0;
             
         }
+
+
     }
 }

@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             this.FirstNameLabel = new System.Windows.Forms.Label();
-            this.FirstNameTB = new System.Windows.Forms.TextBox();
             this.SearchPanel = new System.Windows.Forms.Panel();
             this.SearchBtn = new System.Windows.Forms.Button();
-            this.LastNameTB = new System.Windows.Forms.TextBox();
-            this.LastNameLabel = new System.Windows.Forms.Label();
             this.PatientSearchLabel = new System.Windows.Forms.Label();
             this.AppointmentTB = new System.Windows.Forms.RichTextBox();
             this.PrintBtn = new System.Windows.Forms.Button();
@@ -45,6 +42,7 @@
             this.printTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.PrintThreeBtn = new System.Windows.Forms.Button();
+            this.NameTB = new System.Windows.Forms.TextBox();
             this.SearchPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -55,24 +53,14 @@
             this.FirstNameLabel.Location = new System.Drawing.Point(28, 29);
             this.FirstNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(116, 25);
+            this.FirstNameLabel.Size = new System.Drawing.Size(166, 25);
             this.FirstNameLabel.TabIndex = 0;
-            this.FirstNameLabel.Text = "First Name";
-            // 
-            // FirstNameTB
-            // 
-            this.FirstNameTB.Location = new System.Drawing.Point(32, 58);
-            this.FirstNameTB.Margin = new System.Windows.Forms.Padding(4);
-            this.FirstNameTB.Name = "FirstNameTB";
-            this.FirstNameTB.Size = new System.Drawing.Size(200, 31);
-            this.FirstNameTB.TabIndex = 1;
+            this.FirstNameLabel.Text = "Customer Name";
             // 
             // SearchPanel
             // 
+            this.SearchPanel.Controls.Add(this.NameTB);
             this.SearchPanel.Controls.Add(this.SearchBtn);
-            this.SearchPanel.Controls.Add(this.LastNameTB);
-            this.SearchPanel.Controls.Add(this.LastNameLabel);
-            this.SearchPanel.Controls.Add(this.FirstNameTB);
             this.SearchPanel.Controls.Add(this.FirstNameLabel);
             this.SearchPanel.Location = new System.Drawing.Point(56, 92);
             this.SearchPanel.Margin = new System.Windows.Forms.Padding(4);
@@ -89,25 +77,7 @@
             this.SearchBtn.TabIndex = 4;
             this.SearchBtn.Text = "Search";
             this.SearchBtn.UseVisualStyleBackColor = true;
-            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
-            // 
-            // LastNameTB
-            // 
-            this.LastNameTB.Location = new System.Drawing.Point(310, 58);
-            this.LastNameTB.Margin = new System.Windows.Forms.Padding(4);
-            this.LastNameTB.Name = "LastNameTB";
-            this.LastNameTB.Size = new System.Drawing.Size(200, 31);
-            this.LastNameTB.TabIndex = 3;
-            // 
-            // LastNameLabel
-            // 
-            this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(304, 29);
-            this.LastNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(115, 25);
-            this.LastNameLabel.TabIndex = 2;
-            this.LastNameLabel.Text = "Last Name";
+            //this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // PatientSearchLabel
             // 
@@ -181,7 +151,7 @@
             this.loadTestToolStripMenuItem.Name = "loadTestToolStripMenuItem";
             this.loadTestToolStripMenuItem.Size = new System.Drawing.Size(306, 38);
             this.loadTestToolStripMenuItem.Text = "Load Test";
-            this.loadTestToolStripMenuItem.Click += new System.EventHandler(this.loadTestToolStripMenuItem_Click);
+            //this.loadTestToolStripMenuItem.Click += new System.EventHandler(this.loadTestToolStripMenuItem_Click);
             // 
             // printTestToolStripMenuItem
             // 
@@ -209,6 +179,14 @@
             this.PrintThreeBtn.Text = "Print Next Three Appointments";
             this.PrintThreeBtn.UseVisualStyleBackColor = true;
             this.PrintThreeBtn.Click += new System.EventHandler(this.PrintThreeBtn_Click);
+            // 
+            // NameTB
+            // 
+            this.NameTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.NameTB.Location = new System.Drawing.Point(33, 62);
+            this.NameTB.Name = "NameTB";
+            this.NameTB.Size = new System.Drawing.Size(378, 31);
+            this.NameTB.TabIndex = 5;
             // 
             // MainScreen
             // 
@@ -239,11 +217,8 @@
         #endregion
 
         private System.Windows.Forms.Label FirstNameLabel;
-        private System.Windows.Forms.TextBox FirstNameTB;
         private System.Windows.Forms.Panel SearchPanel;
         private System.Windows.Forms.Label PatientSearchLabel;
-        private System.Windows.Forms.TextBox LastNameTB;
-        private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.Button SearchBtn;
         private System.Windows.Forms.RichTextBox AppointmentTB;
         private System.Windows.Forms.Button PrintBtn;
@@ -255,6 +230,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem databaseSettingsToolStripMenuItem;
         private System.Windows.Forms.Button PrintThreeBtn;
+        private System.Windows.Forms.TextBox NameTB;
     }
 }
 

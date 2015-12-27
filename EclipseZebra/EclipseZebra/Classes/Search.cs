@@ -69,5 +69,42 @@ namespace EclipseZebra.Models
             }
             return result;
         }
+
+        public static AutoCompleteStringCollection setup_autocomplete()
+        {
+            AutoCompleteStringCollection result = new AutoCompleteStringCollection();
+            OdbcConnection db = new OdbcConnection();
+            if(File.Exists("dbSettings.txt"))
+            {
+                db.ConnectionString = "FIL=MS Access;DSN=" + File.ReadAllText("dbSettings.txt");
+            } else
+            {
+                return result;
+            }
+            
+            try
+            {
+                db.Open();
+                OdbcCommand query = new OdbcCommand("SELECT DISTINCT PATIENTS.LastName, PATIENTS.FirstName FROM PATIENTS", db);
+                OdbcDataReader reader = query.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        result.Add(reader.GetString(4) + " " + reader.GetTime(3).ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Couldn't connect to database, error", "Connection Error", MessageBoxButtons.OK);
+                return result;
+            }
+            finally
+            {
+                db.Close();
+            }
+            return result;
+        }
     }
 }
