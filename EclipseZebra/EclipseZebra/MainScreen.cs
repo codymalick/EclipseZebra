@@ -157,25 +157,26 @@ namespace EclipseZebra
                 printer_name = File.ReadLines("printerSettings.txt").Take(1).First();
             }
         }
-        
-        //private void loadTestToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    this.AppointmentTB.Text = string.Empty;
-        //    current_patient = new Patient()
-        //    {
-        //        firstName = "Cody",
-        //        lastName = "Malick",
-        //        appointments = { DateTime.Now, DateTime.Now.AddDays(1), DateTime.Now, DateTime.Now }
-        //    };
-        //    FirstNameTB.Text = current_patient.firstName;
-        //    LastNameTB.Text = current_patient.lastName;
-        //    DateTime temp;
-        //    for (int i = 0; i <= current_patient.appointments.Count - 1; i++)
-        //    {
-        //        temp = Convert.ToDateTime(current_patient.appointments[i]);
-        //        this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
-        //    }
-        //}
+
+        private void loadTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AppointmentTB.Text = string.Empty;
+            current_patient = new Patient()
+            {
+                firstName = "Cody",
+                lastName = "Malick",
+                appointments = { DateTime.Now, DateTime.Now.AddDays(1), DateTime.Now, DateTime.Now }
+            };
+
+            NameTB.Text = current_patient.firstName + " " + current_patient.lastName;
+            
+            DateTime temp;
+            for (int i = 0; i <= current_patient.appointments.Count - 1; i++)
+            {
+                temp = Convert.ToDateTime(current_patient.appointments[i]);
+                this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
+            }
+        }
 
         private void databaseSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -210,6 +211,5 @@ namespace EclipseZebra
         {
             NameTB.AutoCompleteCustomSource = Search.setup_autocomplete();
         }
-
     }
 }

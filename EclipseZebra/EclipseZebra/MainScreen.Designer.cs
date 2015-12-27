@@ -170,6 +170,7 @@
             this.loadTestToolStripMenuItem.Name = "loadTestToolStripMenuItem";
             this.loadTestToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.loadTestToolStripMenuItem.Text = "Load Test";
+            this.loadTestToolStripMenuItem.Click += new System.EventHandler(this.loadTestToolStripMenuItem_Click);
             // 
             // printTestToolStripMenuItem
             // 

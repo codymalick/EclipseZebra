@@ -79,6 +79,7 @@ namespace EclipseZebra.Models
                 db.ConnectionString = "FIL=MS Access;DSN=" + File.ReadAllText("dbSettings.txt");
             } else
             {
+                MessageBox.Show("Please configure Database");
                 return result;
             }
             
