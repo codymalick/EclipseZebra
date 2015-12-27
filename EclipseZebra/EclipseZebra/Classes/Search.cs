@@ -17,7 +17,7 @@ namespace EclipseZebra.Models
             List<string> result = new List<string>();
             //List<string> result = new List<string>();
             OdbcConnection db = new OdbcConnection();
-            db.ConnectionString = "FIL=MS Access;DSN=" + File.ReadAllText("dbSettings");
+            db.ConnectionString = "FIL=MS Access;DSN=" + File.ReadAllText("dbSettings.txt");
             try
             {
                 db.Open();
@@ -85,19 +85,19 @@ namespace EclipseZebra.Models
             try
             {
                 db.Open();
-                OdbcCommand query = new OdbcCommand("SELECT DISTINCT PATIENTS.LastName, PATIENTS.FirstName FROM PATIENTS", db);
+                OdbcCommand query = new OdbcCommand("SELECT DISTINCT FirstName, LastName FROM PATIENTS WHERE(FirstName IS NOT NULL) AND(LastName IS NOT NULL)", db);
                 OdbcDataReader reader = query.ExecuteReader();
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
-                        result.Add(reader.GetString(4) + " " + reader.GetTime(3).ToString());
+                        result.Add(reader.GetString(0).TrimEnd(' ') + " " + reader.GetString(1).TrimEnd(' '));
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Couldn't connect to database, error", "Connection Error", MessageBoxButtons.OK);
+                MessageBox.Show("Couldn't connect to database, error" + ex, "Connection Error", MessageBoxButtons.OK);
                 return result;
             }
             finally
