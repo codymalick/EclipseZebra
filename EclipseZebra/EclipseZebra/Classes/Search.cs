@@ -17,7 +17,7 @@ namespace EclipseZebra.Models
             List<string> result = new List<string>();
             //List<string> result = new List<string>();
             OdbcConnection db = new OdbcConnection();
-            db.ConnectionString = "FIL=MS Access;DSN=" + File.ReadAllText("dbSettings");
+            db.ConnectionString = "FIL=MS Access;DSN=" + File.ReadAllText("dbSettings.txt");
             try
             {
                 db.Open();
@@ -62,6 +62,43 @@ namespace EclipseZebra.Models
             {
                 MessageBox.Show("Couldn't connect to database, error: " + ex, "Connection Error", MessageBoxButtons.OK);
                 return string.Empty;
+            }
+            finally
+            {
+                db.Close();
+            }
+            return result;
+        }
+
+        public static AutoCompleteStringCollection setup_autocomplete()
+        {
+            AutoCompleteStringCollection result = new AutoCompleteStringCollection();
+            OdbcConnection db = new OdbcConnection();
+            if(File.Exists("dbSettings.txt"))
+            {
+                db.ConnectionString = "FIL=MS Access;DSN=" + File.ReadAllText("dbSettings.txt");
+            } else
+            {
+                return result;
+            }
+            
+            try
+            {
+                db.Open();
+                OdbcCommand query = new OdbcCommand("SELECT DISTINCT FirstName, LastName FROM PATIENTS WHERE(FirstName IS NOT NULL) AND(LastName IS NOT NULL)", db);
+                OdbcDataReader reader = query.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        result.Add(reader.GetString(0).TrimEnd(' ') + " " + reader.GetString(1).TrimEnd(' '));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Couldn't connect to database, error" + ex, "Connection Error", MessageBoxButtons.OK);
+                return result;
             }
             finally
             {
