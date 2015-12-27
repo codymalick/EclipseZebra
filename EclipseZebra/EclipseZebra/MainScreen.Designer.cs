@@ -43,6 +43,7 @@
             this.printTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.databaseSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -144,7 +145,7 @@
             this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 42);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -152,30 +153,31 @@
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setPrinterToolStripMenuItem,
+            this.databaseSettingsToolStripMenuItem,
             this.printTestToolStripMenuItem,
             this.loadTestToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(113, 36);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(113, 38);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // setPrinterToolStripMenuItem
             // 
             this.setPrinterToolStripMenuItem.Name = "setPrinterToolStripMenuItem";
-            this.setPrinterToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
-            this.setPrinterToolStripMenuItem.Text = "Set Printer";
+            this.setPrinterToolStripMenuItem.Size = new System.Drawing.Size(306, 38);
+            this.setPrinterToolStripMenuItem.Text = "Printer Settings";
             this.setPrinterToolStripMenuItem.Click += new System.EventHandler(this.setPrinterToolStripMenuItem_Click);
             // 
             // printTestToolStripMenuItem
             // 
             this.printTestToolStripMenuItem.Name = "printTestToolStripMenuItem";
-            this.printTestToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
+            this.printTestToolStripMenuItem.Size = new System.Drawing.Size(306, 38);
             this.printTestToolStripMenuItem.Text = "Print Test";
             this.printTestToolStripMenuItem.Click += new System.EventHandler(this.printTestToolStripMenuItem_Click);
             // 
             // loadTestToolStripMenuItem
             // 
             this.loadTestToolStripMenuItem.Name = "loadTestToolStripMenuItem";
-            this.loadTestToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
+            this.loadTestToolStripMenuItem.Size = new System.Drawing.Size(306, 38);
             this.loadTestToolStripMenuItem.Text = "Load Test";
             this.loadTestToolStripMenuItem.Click += new System.EventHandler(this.loadTestToolStripMenuItem_Click);
             // 
@@ -187,6 +189,13 @@
             this.label1.Size = new System.Drawing.Size(211, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "Future Appointments";
+            // 
+            // databaseSettingsToolStripMenuItem
+            // 
+            this.databaseSettingsToolStripMenuItem.Name = "databaseSettingsToolStripMenuItem";
+            this.databaseSettingsToolStripMenuItem.Size = new System.Drawing.Size(306, 38);
+            this.databaseSettingsToolStripMenuItem.Text = "Database Settings";
+            this.databaseSettingsToolStripMenuItem.Click += new System.EventHandler(this.databaseSettingsToolStripMenuItem_Click);
             // 
             // MainScreen
             // 
@@ -230,6 +239,7 @@
         private System.Windows.Forms.ToolStripMenuItem printTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadTestToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem databaseSettingsToolStripMenuItem;
     }
 }
 

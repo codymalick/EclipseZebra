@@ -68,7 +68,7 @@ namespace EclipseZebra
                     MessageBox.Show("Please enter a printer in settings");
                 } else
                 {
-                    string printer_name = File.ReadAllText("settings.txt");
+                    string printer_name = File.ReadAllText("printerSettings.txt");
                     string name = this.FirstNameTB.Text + " " + this.LastNameTB.Text;
                     RawPrinterHelper.print(current_patient, printer_name);
                 }
@@ -79,7 +79,7 @@ namespace EclipseZebra
 
         private void setPrinterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Settings settings = new Settings();
+            PrinterSettings settings = new PrinterSettings();
             settings.Show();
         }
 
@@ -95,7 +95,12 @@ namespace EclipseZebra
             {
                 firstName = "Cody",
                 lastName = "Malick",
-                appointments = { DateTime.Now, DateTime.Today }
+                //appointments = { DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now}
+                //appointments = { DateTime.Now, DateTime.Now, DateTime.Now }
+                //appointments = { DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now }
+                //appointments = { DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now }
+                appointments = { DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now }
+
             };
             set_printer();
             if (printer_name == null)
@@ -110,9 +115,9 @@ namespace EclipseZebra
 
         private void set_printer()
         {
-            if(File.Exists("settings.txt"))
+            if(File.Exists("printerSettings.txt"))
             {
-                printer_name = File.ReadAllText("settings.txt");
+                printer_name = File.ReadLines("printerSettings.txt").Take(1).First();
             }
         }
 
@@ -128,11 +133,17 @@ namespace EclipseZebra
             FirstNameTB.Text = current_patient.firstName;
             LastNameTB.Text = current_patient.lastName;
             DateTime temp;
-            for(int i = 0; i <= current_patient.appointments.Count-1; i++)
+            for (int i = 0; i <= current_patient.appointments.Count - 1; i++)
             {
                 temp = Convert.ToDateTime(current_patient.appointments[i]);
                 this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
             }
+        }
+
+        private void databaseSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DatabaseSettings db = new DatabaseSettings();
+            db.Show();
         }
     }
 }
