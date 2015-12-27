@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Odbc;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace EclipseZebra.Models
             List<string> result = new List<string>();
             //List<string> result = new List<string>();
             OdbcConnection db = new OdbcConnection();
-            db.ConnectionString = "FIL=MS Access;DSN=FairCom 32bit Driver";
+            db.ConnectionString = "FIL=MS Access;DSN=" + File.ReadAllText("dbSettings");
             try
             {
                 db.Open();
