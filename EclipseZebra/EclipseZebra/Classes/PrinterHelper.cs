@@ -1,10 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Drawing.Printing;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using System.IO;
-using Com.SharpZebra;
+﻿using Com.SharpZebra;
 using System.Collections.Generic;
 using Com.SharpZebra.Commands;
 using Com.SharpZebra.Printing;

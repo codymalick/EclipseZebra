@@ -87,7 +87,6 @@
     <Compile Include="PrinterSettings.Designer.cs">
       <DependentUpon>PrinterSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tests\main_form_test.cs" />
     <EmbeddedResource Include="DatabaseSettings.resx">
       <DependentUpon>DatabaseSettings.cs</DependentUpon>
     </EmbeddedResource>

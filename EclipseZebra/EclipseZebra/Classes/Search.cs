@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Odbc;
-using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+//using System.Linq;
 
 namespace EclipseZebra.Models
 {
@@ -79,7 +76,6 @@ namespace EclipseZebra.Models
                 db.ConnectionString = "FIL=MS Access;DSN=" + File.ReadAllText("dbSelect.txt");
             } else
             {
-                MessageBox.Show("Could not connect to DB");
                 return result;
             }
             
