@@ -21,6 +21,7 @@ namespace EclipseZebra
     {
         Patient current_patient = new Patient();
         string printer_name;
+        string connection_string;
 
         public MainScreen()
         {
@@ -30,9 +31,80 @@ namespace EclipseZebra
             
             InitializeComponent();
             set_printer();
+            set_db();
+            set_status();
             NameTB.AutoCompleteCustomSource = Search.setup_autocomplete();
         }
 
+        #region setup
+        private void set_printer()
+        {
+            if (File.Exists("printerSettings.txt"))
+            {
+                printer_name = File.ReadLines("printerSettings.txt").Take(1).First();
+            }
+        }
+
+        private void set_db()
+        {
+            if(File.Exists("dbSelect.txt"))
+            {
+                connection_string = File.ReadLines("dbSelect.txt").Take(1).First();
+            }
+            else
+            {
+                MessageBox.Show("Please configure Data Sources");
+            }
+        }
+
+        private void set_status()
+        {
+            if(File.Exists("status.txt"))
+            {
+                DBLB.Text = File.ReadAllText("status.txt");
+            }
+            else
+            {
+                DBLB.Text = "Not Set";
+            }
+        }
+        #endregion
+
+        #region set database
+        private void dataSource1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(File.Exists("dbSettings.txt"))
+            {
+                connection_string = File.ReadAllText("dbSettings.txt");
+                File.WriteAllText("dbSelect.txt", connection_string);
+                NameTB.AutoCompleteCustomSource = Search.setup_autocomplete();
+
+                File.WriteAllText("status.txt", "Healing Health Centers");
+                set_status();
+            }
+            else
+            {
+                MessageBox.Show("HHC Data Source not configured");
+            }
+        }
+
+        private void dataSource2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("db2Settings.txt"))
+            {
+                connection_string = File.ReadAllText("db2Settings.txt");
+                File.WriteAllText("dbSelect.txt", connection_string);
+                NameTB.AutoCompleteCustomSource = Search.setup_autocomplete();
+
+                File.WriteAllText("status.txt", "Associated Physicians");
+                set_status();
+            }
+            else
+            {
+                MessageBox.Show("AP Data Source not configured");
+            }
+        }
+        #endregion
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
@@ -47,19 +119,19 @@ namespace EclipseZebra
                 //Handles cases like "Jo Ann Doe"
                 if((NameTB.Text.Split(' ').Count()) == 3)
                 {
-                    firstName = NameTB.Text.Split(' ')[0] + " " + NameTB.Text.Split(' ')[1];
-                    lastName = NameTB.Text.Split(' ')[2];
+                    lastName = NameTB.Text.Split(',')[0] + " " + NameTB.Text.Split(' ')[1];
+                    firstName = NameTB.Text.Split(' ')[2];
                 }
                 //Base Case
                 else
                 {
-                    firstName = NameTB.Text.Split(' ').First();
-                    lastName = string.Empty;
+                    lastName = NameTB.Text.Split(' ').First().TrimEnd(',');
+                    firstName = string.Empty;
 
                     //Gets the last name, fails silently
                     try
                     {
-                        lastName = NameTB.Text.Split(' ')[1];
+                        firstName = NameTB.Text.Split(' ')[1];
                     }
                     catch { }
                 }
@@ -67,7 +139,7 @@ namespace EclipseZebra
                 
                 
                 //Search
-                var result = Search.execute(firstName, lastName);
+                var result = Search.execute(firstName, lastName, connection_string);
                 if (result != null)
                 {
                     //Set Current Patient data for printing
@@ -93,6 +165,9 @@ namespace EclipseZebra
             int err = error_checking();
             if (err == 0)
             {
+                //set first letter of name to uppercase
+                current_patient.firstName = current_patient.firstName.First().ToString().ToUpper() + string.Join("", current_patient.firstName.Skip(1));
+                current_patient.lastName = current_patient.lastName.First().ToString().ToUpper() + string.Join("", current_patient.lastName.Skip(1));
                 string printer_name = File.ReadAllText("printerSettings.txt");
                 RawPrinterHelper.print(current_patient, printer_name);
             }
@@ -152,14 +227,7 @@ namespace EclipseZebra
             }
         }
 
-        private void set_printer()
-        {
-            if(File.Exists("printerSettings.txt"))
-            {
-                printer_name = File.ReadLines("printerSettings.txt").Take(1).First();
-            }
-        }
-
+ 
         private void loadTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.AppointmentTB.Text = string.Empty;
@@ -180,13 +248,7 @@ namespace EclipseZebra
             }
         }
 
-        private void databaseSettingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DatabaseSettings db = new DatabaseSettings();
-            db.Show();
-        }
-
-        
+   
 
         private int error_checking()
         {
@@ -213,5 +275,12 @@ namespace EclipseZebra
         {
             NameTB.AutoCompleteCustomSource = Search.setup_autocomplete();
         }
+
+        private void dataSourceConfigToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DatabaseSettings db = new DatabaseSettings();
+            db.Show();
+        }
+
     }
 }

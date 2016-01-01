@@ -12,12 +12,12 @@ namespace EclipseZebra.Models
 {
     public static class Search
     {
-        public static List<string> execute(string first_name, string last_name)
+        public static List<string> execute(string first_name, string last_name, string connection)
         {
             List<string> result = new List<string>();
             //List<string> result = new List<string>();
             OdbcConnection db = new OdbcConnection();
-            db.ConnectionString = "FIL=MS Access;DSN=" + File.ReadAllText("dbSettings.txt");
+            db.ConnectionString = "FIL=MS Access;DSN=" + connection;
             try
             {
                 db.Open();
@@ -74,12 +74,12 @@ namespace EclipseZebra.Models
         {
             AutoCompleteStringCollection result = new AutoCompleteStringCollection();
             OdbcConnection db = new OdbcConnection();
-            if(File.Exists("dbSettings.txt"))
+            if(File.Exists("dbSelect.txt"))
             {
-                db.ConnectionString = "FIL=MS Access;DSN=" + File.ReadAllText("dbSettings.txt");
+                db.ConnectionString = "FIL=MS Access;DSN=" + File.ReadAllText("dbSelect.txt");
             } else
             {
-                MessageBox.Show("Please configure Database");
+                MessageBox.Show("Could not connect to DB");
                 return result;
             }
             
@@ -92,13 +92,13 @@ namespace EclipseZebra.Models
                 {
                     while (reader.Read())
                     {
-                        result.Add(reader.GetString(0).TrimEnd(' ') + " " + reader.GetString(1).TrimEnd(' '));
+                        result.Add(reader.GetString(1).TrimEnd(' ') + ", " + reader.GetString(0).TrimEnd(' '));
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Couldn't connect to database, error" + ex, "Connection Error", MessageBoxButtons.OK);
+                MessageBox.Show("Couldn't connect to database, error", "Connection Error", MessageBoxButtons.OK);
                 return result;
             }
             finally
