@@ -159,6 +159,11 @@ namespace EclipseZebra
             db.Show();
         }
 
+        private void setPrinterToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            PrinterSettings prnt = new PrinterSettings();
+            prnt.Show();
+        }
         #endregion
 
         #region buttons
@@ -277,8 +282,9 @@ namespace EclipseZebra
 
         }
 
+
         #endregion
 
-
+        
     }
 }
