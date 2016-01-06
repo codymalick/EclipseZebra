@@ -54,6 +54,10 @@ namespace EclipseZebra
             if(File.Exists("status.txt"))
             {
                 DBLB.Text = File.ReadAllText("status.txt");
+                if (DBLB.Text == "Healing Health Centers")
+                    radioButton1.Select();
+                if (DBLB.Text == "Associated Physicians")
+                    radioButton2.Select();
             }
             else
             {
@@ -284,6 +288,40 @@ namespace EclipseZebra
 
 
         #endregion
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (File.Exists("dbSettings.txt"))
+            {
+                connection_string = File.ReadAllText("dbSettings.txt");
+                File.WriteAllText("dbSelect.txt", connection_string);
+                NameTB.AutoCompleteCustomSource = Search.setup_autocomplete();
+
+                File.WriteAllText("status.txt", "Healing Health Centers");
+                set_status();
+            }
+            else
+            {
+                MessageBox.Show("HHC Data Source not configured");
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (File.Exists("db2Settings.txt"))
+            {
+                connection_string = File.ReadAllText("db2Settings.txt");
+                File.WriteAllText("dbSelect.txt", connection_string);
+                NameTB.AutoCompleteCustomSource = Search.setup_autocomplete();
+
+                File.WriteAllText("status.txt", "Associated Physicians");
+                set_status();
+            }
+            else
+            {
+                MessageBox.Show("AP Data Source not configured");
+            }
+        }
 
         
     }
