@@ -35,9 +35,6 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.databaseSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataSourceConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectDataSourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataSource1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataSource2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printerSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setPrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +58,7 @@
             // AppointmentTB
             // 
             this.AppointmentTB.Location = new System.Drawing.Point(26, 98);
-            this.AppointmentTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AppointmentTB.Margin = new System.Windows.Forms.Padding(2);
             this.AppointmentTB.Name = "AppointmentTB";
             this.AppointmentTB.Size = new System.Drawing.Size(414, 171);
             this.AppointmentTB.TabIndex = 9;
@@ -71,7 +68,7 @@
             // PrintBtn
             // 
             this.PrintBtn.Location = new System.Drawing.Point(26, 273);
-            this.PrintBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PrintBtn.Margin = new System.Windows.Forms.Padding(2);
             this.PrintBtn.Name = "PrintBtn";
             this.PrintBtn.Size = new System.Drawing.Size(124, 34);
             this.PrintBtn.TabIndex = 5;
@@ -104,8 +101,7 @@
             // databaseSettingsToolStripMenuItem
             // 
             this.databaseSettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dataSourceConfigToolStripMenuItem,
-            this.selectDataSourceToolStripMenuItem});
+            this.dataSourceConfigToolStripMenuItem});
             this.databaseSettingsToolStripMenuItem.Name = "databaseSettingsToolStripMenuItem";
             this.databaseSettingsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.databaseSettingsToolStripMenuItem.Text = "Database Settings";
@@ -116,29 +112,6 @@
             this.dataSourceConfigToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.dataSourceConfigToolStripMenuItem.Text = "Data Source Config";
             this.dataSourceConfigToolStripMenuItem.Click += new System.EventHandler(this.dataSourceConfigToolStripMenuItem_Click);
-            // 
-            // selectDataSourceToolStripMenuItem
-            // 
-            this.selectDataSourceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dataSource1ToolStripMenuItem,
-            this.dataSource2ToolStripMenuItem});
-            this.selectDataSourceToolStripMenuItem.Name = "selectDataSourceToolStripMenuItem";
-            this.selectDataSourceToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.selectDataSourceToolStripMenuItem.Text = "Select Data Source";
-            // 
-            // dataSource1ToolStripMenuItem
-            // 
-            this.dataSource1ToolStripMenuItem.Name = "dataSource1ToolStripMenuItem";
-            this.dataSource1ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.dataSource1ToolStripMenuItem.Text = "Healing Health Centers";
-            this.dataSource1ToolStripMenuItem.Click += new System.EventHandler(this.dataSource1ToolStripMenuItem_Click);
-            // 
-            // dataSource2ToolStripMenuItem
-            // 
-            this.dataSource2ToolStripMenuItem.Name = "dataSource2ToolStripMenuItem";
-            this.dataSource2ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.dataSource2ToolStripMenuItem.Text = "Associated Physicians";
-            this.dataSource2ToolStripMenuItem.Click += new System.EventHandler(this.dataSource2ToolStripMenuItem_Click);
             // 
             // printerSettingsToolStripMenuItem
             // 
@@ -152,14 +125,14 @@
             // setPrinterToolStripMenuItem
             // 
             this.setPrinterToolStripMenuItem.Name = "setPrinterToolStripMenuItem";
-            this.setPrinterToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.setPrinterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.setPrinterToolStripMenuItem.Text = "Printer Config";
             this.setPrinterToolStripMenuItem.Click += new System.EventHandler(this.setPrinterToolStripMenuItem_Click_1);
             // 
             // printTestToolStripMenuItem
             // 
             this.printTestToolStripMenuItem.Name = "printTestToolStripMenuItem";
-            this.printTestToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.printTestToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printTestToolStripMenuItem.Text = "Print Test";
             // 
             // otherToolStripMenuItem
@@ -186,7 +159,7 @@
             // PrintThreeBtn
             // 
             this.PrintThreeBtn.Location = new System.Drawing.Point(154, 273);
-            this.PrintThreeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PrintThreeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.PrintThreeBtn.Name = "PrintThreeBtn";
             this.PrintThreeBtn.Size = new System.Drawing.Size(124, 34);
             this.PrintThreeBtn.TabIndex = 8;
@@ -207,7 +180,7 @@
             // SearchBtn
             // 
             this.SearchBtn.Location = new System.Drawing.Point(213, 1);
-            this.SearchBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SearchBtn.Margin = new System.Windows.Forms.Padding(2);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(116, 22);
             this.SearchBtn.TabIndex = 4;
@@ -230,7 +203,7 @@
             this.NameTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.NameTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.NameTB.Location = new System.Drawing.Point(18, 2);
-            this.NameTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NameTB.Margin = new System.Windows.Forms.Padding(2);
             this.NameTB.Name = "NameTB";
             this.NameTB.Size = new System.Drawing.Size(191, 20);
             this.NameTB.TabIndex = 4;
@@ -241,7 +214,7 @@
             this.SearchPanel.Controls.Add(this.label1);
             this.SearchPanel.Controls.Add(this.SearchBtn);
             this.SearchPanel.Location = new System.Drawing.Point(11, 48);
-            this.SearchPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SearchPanel.Margin = new System.Windows.Forms.Padding(2);
             this.SearchPanel.Name = "SearchPanel";
             this.SearchPanel.Size = new System.Drawing.Size(412, 75);
             this.SearchPanel.TabIndex = 2;
@@ -303,7 +276,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "MainScreen";
             this.Text = "EclipseZebra";
@@ -329,9 +302,6 @@
         private System.Windows.Forms.TextBox NameTB;
         private System.Windows.Forms.Panel SearchPanel;
         private System.Windows.Forms.ToolStripMenuItem dataSourceConfigToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem selectDataSourceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dataSource1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dataSource2ToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label DBLB;
         private System.Windows.Forms.ToolStripMenuItem printerSettingsToolStripMenuItem;

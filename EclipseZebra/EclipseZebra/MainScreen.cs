@@ -25,7 +25,6 @@ namespace EclipseZebra
             set_printer();
             set_db();
             set_status();
-            NameTB.AutoCompleteCustomSource = Search.setup_autocomplete();
         }
 
         #region setup
@@ -55,9 +54,9 @@ namespace EclipseZebra
             {
                 DBLB.Text = File.ReadAllText("status.txt");
                 if (DBLB.Text == "Healing Health Centers")
-                    radioButton1.Select();
+                    radioButton1.Checked = true;
                 if (DBLB.Text == "Associated Physicians")
-                    radioButton2.Select();
+                    radioButton2.Checked = true;
             }
             else
             {
@@ -291,7 +290,7 @@ namespace EclipseZebra
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (File.Exists("dbSettings.txt"))
+            if (File.Exists("dbSettings.txt") && this.radioButton1.Checked)
             {
                 connection_string = File.ReadAllText("dbSettings.txt");
                 File.WriteAllText("dbSelect.txt", connection_string);
@@ -300,15 +299,11 @@ namespace EclipseZebra
                 File.WriteAllText("status.txt", "Healing Health Centers");
                 set_status();
             }
-            else
-            {
-                MessageBox.Show("HHC Data Source not configured");
-            }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if (File.Exists("db2Settings.txt"))
+            if (File.Exists("db2Settings.txt") && this.radioButton2.Checked)
             {
                 connection_string = File.ReadAllText("db2Settings.txt");
                 File.WriteAllText("dbSelect.txt", connection_string);
@@ -317,12 +312,6 @@ namespace EclipseZebra
                 File.WriteAllText("status.txt", "Associated Physicians");
                 set_status();
             }
-            else
-            {
-                MessageBox.Show("AP Data Source not configured");
-            }
         }
-
-        
     }
 }
