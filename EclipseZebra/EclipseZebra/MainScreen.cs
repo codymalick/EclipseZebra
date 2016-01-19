@@ -183,7 +183,7 @@ namespace EclipseZebra
                 //Handles cases like "Jo Ann Doe"
                 if ((NameTB.Text.Split(' ').Count()) == 3)
                 {
-                    lastName = NameTB.Text.Split(',')[0] + " " + NameTB.Text.Split(' ')[1];
+                    lastName = NameTB.Text.Split(' ')[0] + " " + NameTB.Text.Split(' ')[1].Trim(',');
                     firstName = NameTB.Text.Split(' ')[2];
                 }
                 //Base Case
