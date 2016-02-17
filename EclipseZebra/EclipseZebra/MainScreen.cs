@@ -214,8 +214,16 @@ namespace EclipseZebra
                     for (int i = 0; i <= result.Count - 1; i++)
                     {
                         temp = Convert.ToDateTime(result[i]);
-                        current_patient.appointments.Add(temp);
-                        this.AppointmentTB.Text += temp.ToShortDateString() + " @ " + temp.ToShortTimeString() + '\n';
+                        var matches = current_patient.appointments.Where(p => p.Date == temp.Date).ToList();
+                        if (matches.Count == 0)
+                        {
+                            current_patient.appointments.Add(temp);
+                        }
+                    }
+
+                    for (int i = 0; i <= current_patient.appointments.Count - 1; i++)
+                    {
+                        this.AppointmentTB.Text += current_patient.appointments[i].ToShortDateString() + " @ " + current_patient.appointments[i].ToShortTimeString() + '\n';
                     }
                 }
             }
