@@ -220,7 +220,7 @@ namespace EclipseZebra
                             current_patient.appointments.Add(temp);
                         }
                     }
-
+                    current_patient.appointments.Reverse();
                     for (int i = 0; i <= current_patient.appointments.Count - 1; i++)
                     {
                         this.AppointmentTB.Text += current_patient.appointments[i].ToShortDateString() + " @ " + current_patient.appointments[i].ToShortTimeString() + '\n';

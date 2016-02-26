@@ -19,8 +19,8 @@ namespace EclipseZebra.Models
             {
                 db.Open();
                 //Select all patients with future appointments
-                //SELECT DISTINCT PATIENTS.PatientID, PATIENTS.LastName, PATIENTS.FirstName, APPOINTMENTS."Time", APPOINTMENTS."Date" FROM PATIENTS, APPOINTMENTS WHERE PATIENTS.PatientID = APPOINTMENTS.PatientID AND(APPOINTMENTS."Date" > CURDATE()) ORDER BY APPOINTMENTS."Date" DESC
-                OdbcCommand query = new OdbcCommand("SELECT PATIENTS.PatientID, PATIENTS.LastName, PATIENTS.FirstName, APPOINTMENTS.\"Time\", DISTINCT APPOINTMENTS.\"Date\" FROM   PATIENTS, APPOINTMENTS WHERE PATIENTS.PatientID = APPOINTMENTS.PatientID AND(PATIENTS.FirstName = '" + first_name + "') AND(PATIENTS.LastName = '" + last_name + "')AND (APPOINTMENTS.\"Date\" > CURDATE()) ORDER BY APPOINTMENTS.\"Date\" DESC", db);
+                //SELECT PATIENTS.PatientID, PATIENTS.LastName, PATIENTS.FirstName, APPOINTMENTS."Time", APPOINTMENTS."Date" FROM PATIENTS, APPOINTMENTS WHERE PATIENTS.PatientID = APPOINTMENTS.PatientID AND(APPOINTMENTS."Date" > CURDATE()) ORDER BY APPOINTMENTS."Date" DESC
+                OdbcCommand query = new OdbcCommand("SELECT PATIENTS.PatientID, PATIENTS.LastName, PATIENTS.FirstName, APPOINTMENTS.\"Time\", APPOINTMENTS.\"Date\" FROM PATIENTS, APPOINTMENTS WHERE PATIENTS.PatientID = APPOINTMENTS.PatientID AND(PATIENTS.FirstName = '" + first_name + "') AND(PATIENTS.LastName = '" + last_name + "')AND (APPOINTMENTS.\"Date\" > CURDATE()) ORDER BY APPOINTMENTS.\"Date\" DESC", db);
                 OdbcDataReader reader = query.ExecuteReader();
                 if(reader.HasRows)
                 {
