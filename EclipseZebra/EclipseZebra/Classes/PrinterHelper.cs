@@ -50,11 +50,6 @@ public class RawPrinterHelper
                 break;
         }
 
-        //if(patient.appointments.Count % 3 == 1)
-        //{
-        //    location += 60;
-        //}
-        //decrement location to fit patient reminder
         location -= 25;
 
         //Print patient reminder
