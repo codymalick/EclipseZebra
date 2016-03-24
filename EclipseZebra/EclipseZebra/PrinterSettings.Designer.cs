@@ -50,7 +50,7 @@
             this.PrinterTB.Location = new System.Drawing.Point(9, 23);
             this.PrinterTB.Margin = new System.Windows.Forms.Padding(2);
             this.PrinterTB.Name = "PrinterTB";
-            this.PrinterTB.Size = new System.Drawing.Size(152, 20);
+            this.PrinterTB.Size = new System.Drawing.Size(348, 20);
             this.PrinterTB.TabIndex = 1;
             this.PrinterTB.TextChanged += new System.EventHandler(this.PrinterTB_TextChanged);
             // 

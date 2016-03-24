@@ -33,7 +33,7 @@ namespace EclipseZebra
         {
             foreach(var printer in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
             {
-                if(printer.ToString().ToLower().Contains("zebra") && printer.ToString().ToLower().Contains("redirected"))
+                if(printer.ToString().ToLower().Contains("zdesigner") && printer.ToString().ToLower().Contains("redirected"))
                 {
                     File.WriteAllText("printerSettings.txt", printer.ToString());
                     break;
