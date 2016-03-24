@@ -26,6 +26,20 @@ namespace EclipseZebra
             }
 
             printer_box1.Items.AddRange(printer_list.ToArray());         
+
+        }
+
+        public void auto_select_printer()
+        {
+            foreach(var printer in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
+            {
+                if(printer.ToString().ToLower().Contains("zebra") && printer.ToString().ToLower().Contains("redirected"))
+                {
+                    File.WriteAllText("printerSettings.txt", printer.ToString());
+                    break;
+                }
+            }
+
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -54,6 +68,8 @@ namespace EclipseZebra
             string printer_name = printer_box1.SelectedItem.ToString();
             PrinterTB.Text = printer_name;
         }
+
+
 
         //private void button1_Click(object sender, EventArgs e)
         //{
