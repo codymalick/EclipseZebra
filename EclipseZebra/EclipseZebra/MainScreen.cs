@@ -51,10 +51,6 @@ namespace EclipseZebra
             {
                 connection_string = File.ReadLines("dbSelect.txt").Take(1).First();
             }
-            else
-            {
-                MessageBox.Show("Please configure Data Sources");
-            }
         }
 
         private void set_status()
