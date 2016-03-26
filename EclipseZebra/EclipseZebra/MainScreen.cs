@@ -22,8 +22,15 @@ namespace EclipseZebra
             //Eclipse uses ODBC database pattern
             
             InitializeComponent();
+
+            //Auto Select printer
             PrinterSettings auto_load = new PrinterSettings();
             auto_load.auto_select_printer();
+
+            //Auto Select Datasources
+            DatabaseSettings auto_load_db = new DatabaseSettings();
+            auto_load_db.auto_select_datasources();
+
             set_printer();
             set_db();
             set_status();

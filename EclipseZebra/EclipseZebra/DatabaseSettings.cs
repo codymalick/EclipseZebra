@@ -38,5 +38,19 @@ namespace EclipseZebra
             }
         }
 
+
+        //Sets the default ODBC Datasources to EclipseAP and EclipseHHC
+        public void auto_select_datasources()
+        {
+            if (!File.Exists("dbSettings.txt"))
+            {
+                File.WriteAllText("dbSettings.txt", "EclipseHHC");
+            }
+            if(!File.Exists("db2Settings.txt"))
+            {
+                File.WriteAllText("db2Settings.txt", "EclipseAP");
+            }
+        }
+
     }
 }
